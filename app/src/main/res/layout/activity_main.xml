@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF8F7F7"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:startIconDrawable="@drawable/ic_baseline_search_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/saleRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        tools:listitem="@layout/sale_list_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textField" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/eggRecycelerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
+        tools:itemCount="3"
+        tools:listitem="@layout/list_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saleRecyclerView" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:fabCradleRoundedCornerRadius="0dp"
+            app:fabAlignmentMode="center"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/wall_share"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_autofps_select_24"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <Button
+                    android:id="@+id/wall_stats"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_search_24"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/wall_share" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_person_24"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <Button
+                    android:id="@+id/wall_blur"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_baseline_card_giftcard_24"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="67dp"
+            android:layout_height="67dp"
+            android:src="@drawable/ic_baseline_save_24"
+            app:backgroundTint="#FFFF00"
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="center" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
