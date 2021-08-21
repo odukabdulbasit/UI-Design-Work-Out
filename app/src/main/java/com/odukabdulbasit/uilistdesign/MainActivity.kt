@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        title = "Ara"
+
         val saleEggRcyclerView = findViewById<RecyclerView>(R.id.saleRecyclerView)
         saleEggRcyclerView.adapter = SaleEggListAdapter(getSaleEggModels())
 
